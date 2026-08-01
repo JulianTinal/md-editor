@@ -5,7 +5,7 @@
  * exists. While it is empty, the star counter is hidden rather than faked, and
  * GitHub links fall back to the profile.
  */
-export const REPO = '';
+export const REPO = 'JulianTinal/md-editor';
 
 export const repoUrl = REPO ? `https://github.com/${REPO}` : 'https://github.com/JulianTinal';
 
