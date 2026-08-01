@@ -1,0 +1,113 @@
+@media print {
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  body {
+    color: #181820;
+    background: white;
+    font-size: 11pt;
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .prose {
+    max-width: none;
+    color: #181820;
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+  }
+
+  .prose h1 {
+    font-size: 24pt;
+    letter-spacing: -0.02em;
+    color: #181820;
+  }
+
+  .prose h2 {
+    font-size: 18pt;
+    letter-spacing: -0.01em;
+    color: #181820;
+  }
+
+  .prose h3 {
+    font-size: 14pt;
+    color: #181820;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+    color: #181820;
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+  }
+
+  .prose pre,
+  .prose blockquote,
+  .prose table,
+  .prose img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .prose pre {
+    background: #f7f6f1;
+    border: 1px solid #e3e0d6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #181820;
+    font-family: "JetBrains Mono", "Cascadia Code", monospace;
+  }
+
+  .prose code {
+    background: #eceae3;
+    color: #4338ca;
+  }
+
+  .prose pre code {
+    background: none;
+    color: inherit;
+  }
+
+  .prose a {
+    color: #4338ca;
+    text-decoration: underline;
+    background: none;
+    border-bottom: none;
+  }
+
+  .prose th {
+    background: #f0eee7;
+    color: #181820;
+  }
+
+  .prose td {
+    color: #181820;
+  }
+
+  .prose blockquote {
+    background: #f5f3ff;
+    border-left: 2px solid #7c3aed;
+  }
+
+  .prose p,
+  .prose li {
+    color: #181820;
+  }
+
+  .prose strong {
+    color: #181820;
+  }
+
+  .prose em {
+    color: #181820;
+  }
+}

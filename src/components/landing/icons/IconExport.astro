@@ -1,0 +1,55 @@
+---
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+  class={className}
+  width="56"
+  height="56"
+  viewBox="0 0 56 56"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <defs>
+    <linearGradient id="export-grad" x1="10" y1="6" x2="46" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa" stop-opacity="0.20" />
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0.04" />
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M14 6 L36 6 C38.2 6 40 7.8 40 10 L40 50 C40 52.2 38.2 54 36 54 L14 54 C11.8 54 10 52.2 10 50 L10 10 C10 7.8 11.8 6 14 6 Z"
+    fill="url(#export-grad)"
+    stroke="#98989f"
+    stroke-width="1.2"
+  />
+
+  <line x1="16" y1="16" x2="32" y2="16" stroke="#98989f" stroke-width="1.2" stroke-linecap="round" />
+  <line x1="16" y1="22" x2="34" y2="22" stroke="#98989f" stroke-width="1.2" stroke-linecap="round" />
+  <line x1="16" y1="28" x2="28" y2="28" stroke="#98989f" stroke-width="1.2" stroke-linecap="round" />
+
+  <g transform="translate(34 32)">
+    <rect x="0" y="0" width="16" height="20" rx="2" fill="#0a0a0c" stroke="#7c3aed" stroke-width="1.4" />
+    <text
+      x="8"
+      y="13"
+      text-anchor="middle"
+      font-family="JetBrains Mono, monospace"
+      font-size="7"
+      font-weight="700"
+      fill="#7c3aed"
+    >
+      PDF
+    </text>
+  </g>
+
+  <path
+    d="M14 36 L20 42 M26 42 L20 42 L20 36"
+    stroke="#7c3aed"
+    stroke-width="1.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>

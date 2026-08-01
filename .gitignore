@@ -1,0 +1,54 @@
+# ---- Dependencies ----
+node_modules/
+.pnpm-store/
+
+# ---- Build output ----
+dist/
+.astro/
+.vercel/
+.netlify/
+.output/
+
+# ---- Logs & debug ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+.idea/
+
+# ---- AI tooling & assistant configs (not part of the project) ----
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+.claude/
+.codex/
+.cursor/
+.cursorrules
+.aider*
+.mcp.json
+.windsurfrules
+
+# ---- Impeccable design tooling (internal) ----
+.impeccable/
+
+# ---- Internal docs & spec (not shipped with the open-source project) ----
+SPEC-markdown-converter.md
+DESIGN.md
+PRODUCT.md
+
+# ---- Test / automation artifacts ----
+.playwright-mcp/
+playwright-report/
+test-results/

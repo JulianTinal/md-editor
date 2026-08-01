@@ -1,0 +1,162 @@
+---
+const mdSource = [
+  { t: 'h', c: 'text-[--color-text-primary] font-semibold', v: '# Lanzamiento v2.0' },
+  { t: 'p', c: 'text-[--color-text-secondary]', v: 'Hoy sale la versión 2.0 con vista previa' },
+  { t: 'p', c: 'text-[--color-text-secondary]', v: 'mejorada, exportación DOCX nativa y' },
+  { t: 'p', c: 'text-[--color-text-secondary]', v: 'soporte completo para tablas GFM.' },
+  { t: 'sp' },
+  { t: 'h', c: 'text-[--color-text-primary] font-semibold', v: '## Cambios' },
+  { t: 'li', c: 'text-[--color-text-secondary]', v: '- Editor con **resaltado**' },
+  { t: 'li', c: 'text-[--color-text-secondary]', v: '- Export a PDF y Word' },
+  { t: 'li', c: 'text-[--color-text-secondary]', v: '- Modo claro y oscuro' },
+  { t: 'sp' },
+  { t: 'h', c: 'text-[--color-text-primary] font-semibold', v: '## Ejemplo de código' },
+  { t: 'code', c: 'text-[--color-text-tertiary]', v: '```typescript' },
+  { t: 'code', c: 'text-[--color-text-primary]', v: 'function hola(nombre: string) {' },
+  { t: 'code', c: 'text-[--color-text-primary]', v: '  return `Hola, ${nombre}!`;' },
+  { t: 'code', c: 'text-[--color-text-primary]', v: '}' },
+  { t: 'code', c: 'text-[--color-text-tertiary]', v: '```' },
+];
+
+const previewContent = [
+  { t: 'h1', v: 'Lanzamiento v2.0' },
+  { t: 'p', v: 'Hoy sale la versión 2.0 con vista previa mejorada, exportación DOCX nativa y soporte completo para tablas GFM.' },
+  { t: 'h2', v: 'Cambios' },
+  { t: 'ul', items: [
+    { t: 'Editor con', bold: true, end: 'resaltado' },
+    { t: 'Export a PDF y Word' },
+    { t: 'Modo claro y oscuro' },
+  ]},
+  { t: 'h2', v: 'Ejemplo de código' },
+  { t: 'code', v: 'function hola(nombre: string) {\n  return `Hola, ${nombre}!`;\n}' },
+];
+---
+
+<div class="relative w-full">
+  <div class="absolute -left-6 -top-6 -z-10 h-40 w-40 rounded-full bg-(--color-accent) opacity-[0.10] blur-3xl float-1"></div>
+  <div class="absolute -right-10 top-20 -z-10 h-32 w-32 rounded-full bg-[#7c3aed] opacity-[0.10] blur-3xl float-2"></div>
+
+  <div class="relative overflow-hidden rounded-xl border border-(--color-border) bg-(--color-bg-surface) shadow-2xl shadow-black/60">
+    <div class="flex items-center justify-between border-b border-(--color-border-faint) bg-(--color-bg-soft) px-3 py-2">
+      <div class="flex items-center gap-1.5">
+        <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+      </div>
+      <div class="flex items-center gap-2 rounded-md bg-(--color-bg-inset) px-2.5 py-1 font-mono text-[10.5px] text-(--color-text-tertiary)">
+        <span class="text-(--color-text-dim)">●</span>
+        <span>lanzamiento-v2.md</span>
+        <span class="text-(--color-text-dim)">·</span>
+        <span class="text-(--color-signal)">saved</span>
+      </div>
+      <div class="hidden items-center gap-1.5 sm:flex">
+        <span class="rounded-md p-1 text-(--color-text-dim)">
+          <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v16.5h16.5"/></svg>
+        </span>
+        <span class="rounded-md p-1 text-(--color-text-dim)">
+          <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V5.25a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5V9m-6 0h6m-6 0v10.5A1.5 1.5 0 009.75 21h4.5a1.5 1.5 0 001.5-1.5V9"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between border-b border-(--color-border-faint) bg-(--color-bg-soft) px-3 py-1.5">
+      <div class="flex items-center gap-3 font-mono text-[10.5px] text-(--color-text-tertiary)">
+        <span class="font-semibold tracking-tight text-(--color-text-primary)">MD EDITOR</span>
+        <span class="text-(--color-text-dim)">·</span>
+        <span>lanzamiento-v2.md</span>
+      </div>
+      <div class="flex items-center gap-2 font-mono text-[10.5px] text-(--color-text-tertiary)">
+        <span class="hidden sm:inline">120W · 680C</span>
+        <span class="hidden text-(--color-text-dim) sm:inline">·</span>
+        <span class="flex items-center gap-1">
+          <span class="inline-block h-1 w-1 rounded-full bg-(--color-signal)"></span>
+          READY
+        </span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2">
+      <div class="border-b border-(--color-border-faint) bg-(--color-bg-base) p-5 font-mono text-[12.5px] leading-[1.75] sm:border-b-0 sm:border-r">
+        {mdSource.map((line) => {
+          if (line.t === 'sp') return <div>&nbsp;</div>;
+          if (line.t === 'h') {
+            const parts = line.v.split(/(\*\*[^*]+\*\*)/g);
+            return (
+              <div class={line.c}>
+                {parts.map((p) => p.startsWith('**') ? <span class="text-(--color-accent)">{p.slice(2, -2)}</span> : p)}
+              </div>
+            );
+          }
+          if (line.t === 'li') {
+            const parts = line.v.replace(/^-\s/, '').split(/(\*\*[^*]+\*\*)/g);
+            return (
+              <div class={line.c}>
+                <span class="text-(--color-text-dim)">- </span>
+                {parts.map((p) => p.startsWith('**') ? <span class="font-semibold text-(--color-text-primary)">{p.slice(2, -2)}</span> : p)}
+              </div>
+            );
+          }
+          if (line.t === 'code') {
+            return <div class={line.c}>{line.v}</div>;
+          }
+          return <div class={line.c}>{line.v}</div>;
+        })}
+        <div class="flex items-center">
+          <span class="caret-blink text-(--color-accent)">▍</span>
+        </div>
+      </div>
+
+      <div class="bg-(--color-bg-surface) p-6">
+        <div class="prose prose-sm max-w-none">
+          {previewContent.map((block) => {
+            if (block.t === 'h1') {
+              return <h1 class="!mt-0 !mb-3 !text-[22px] !font-semibold !tracking-tight !text-(--color-text-primary)" style="font-family: var(--font-display)">{block.v}</h1>;
+            }
+            if (block.t === 'h2') {
+              return <h2 class="!mt-4 !mb-2 !text-[15px] !font-semibold !tracking-tight !text-(--color-text-primary)" style="font-family: var(--font-display)">{block.v}</h2>;
+            }
+            if (block.t === 'p') {
+              return <p class="!my-2 !text-[13px] !leading-relaxed !text-(--color-text-secondary)">{block.v}</p>;
+            }
+            if (block.t === 'ul') {
+              return (
+                <ul class="!my-2 !text-[13px] !text-(--color-text-secondary)">
+                  {block.items?.map((item) => (
+                    <li class="!my-0.5">
+                      {item.bold ? <><span class="!text-(--color-text-primary) !font-semibold">{item.t} </span>{item.end}</> : item.t}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+            if (block.t === 'code') {
+              return (
+                <pre class="!my-3 !rounded-md !bg-(--color-bg-inset) !px-3 !py-2 !text-[11.5px] !text-(--color-text-primary)" style="font-family: var(--font-mono)"><code>{block.v}</code></pre>
+              );
+            }
+            return null;
+          })}
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between border-t border-(--color-border-faint) bg-(--color-bg-soft) px-3 py-1.5 font-mono text-[10px] tracking-tight text-(--color-text-tertiary)">
+      <div class="flex items-center gap-3">
+        <span>UTF-8</span>
+        <span class="text-(--color-text-dim)">·</span>
+        <span>MARKDOWN</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span>LN 14, COL 22</span>
+        <span class="text-(--color-text-dim)">·</span>
+        <span class="text-(--color-signal)">NO ERRORS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pointer-events-none absolute -bottom-4 right-4 hidden rotate-2 sm:block">
+    <div class="rounded-md border border-(--color-border) bg-(--color-bg-elevated) px-2.5 py-1 font-mono text-[10.5px] text-(--color-text-tertiary) shadow-xl">
+      <span class="text-(--color-accent)">●</span> Export PDF
+    </div>
+  </div>
+</div>

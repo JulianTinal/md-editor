@@ -1,0 +1,140 @@
+---
+import Nav from './Nav.astro';
+import AnimatedEditor from './AnimatedEditor.astro';
+---
+
+<!-- Quiet ground: one corner glow, one lift behind the editor, nothing moving. -->
+<div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+  <div
+    class="absolute -left-[10%] -top-[15%] h-[620px] w-[620px] rounded-full opacity-55 blur-[130px]"
+    style="background: radial-gradient(circle, rgba(124, 58, 237, 0.34) 0%, rgba(124, 58, 237, 0) 70%);"
+  >
+  </div>
+  <div
+    class="absolute right-[2%] top-[18%] h-[560px] w-[680px] rounded-full opacity-45 blur-[120px]"
+    style="background: radial-gradient(circle, rgba(167, 139, 250, 0.24) 0%, rgba(167, 139, 250, 0) 70%);"
+  >
+  </div>
+  <div
+    class="absolute inset-0"
+    style="background: radial-gradient(ellipse 90% 75% at 50% 35%, transparent 40%, rgba(15, 11, 34, 0.55) 100%);"
+  >
+  </div>
+</div>
+
+<Nav />
+
+<section class="relative px-4 pb-12 pt-24 sm:px-8 sm:pb-10 sm:pt-10" id="hero">
+  <div class="mx-auto grid w-full max-w-[1320px] grid-cols-1 items-center gap-11 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+    <div class="order-2 lg:order-1">
+      <h1
+        class="font-display text-[clamp(1.875rem,4.6vw,3.75rem)] font-extrabold leading-[1.05] tracking-tighter-2 text-(--color-text-primary)"
+      >
+        <span class="line-wipe line-wipe-1 pb-[0.12em] -mb-[0.12em]">
+          <span>Escribe en <span class="text-(--color-accent-bright)">Markdown</span></span>
+        </span>
+        <span class="line-wipe line-wipe-2 pb-[0.12em] -mb-[0.12em]">
+          <span>Exporta <span class="text-(--color-accent-bright) sm:whitespace-nowrap">en segundos</span></span>
+        </span>
+      </h1>
+
+      <p
+        class="fade-up fade-up-3 mt-6 max-w-[54ch] text-[17px] leading-relaxed text-(--color-text-secondary) sm:text-lg"
+      >
+        El editor Markdown que convierte texto plano en documentos PDF y Word con tipografía
+        cuidada. Sin cuentas, sin esperas, sin configuración.
+      </p>
+
+      <div class="fade-up fade-up-4 mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+        <a
+          href="/editor"
+          class="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-(--color-accent) px-7 py-4 text-[15px] font-semibold tracking-tight text-white transition-colors hover:bg-(--color-accent-bright) hover:text-(--color-bg-inset)"
+        >
+          <span>Abrir el editor</span>
+          <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+        </a>
+        <a
+          href="#footer"
+          class="inline-flex items-center justify-center gap-2 rounded-xl border border-(--color-border-strong) px-7 py-4 text-[15px] font-medium text-(--color-text-primary) transition-colors hover:border-(--color-accent) hover:bg-(--color-bg-surface)"
+        >
+          <span>Conocer más</span>
+        </a>
+      </div>
+
+      <p
+        class="fade-up fade-up-5 mt-7 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[14px] text-(--color-text-tertiary)"
+      >
+        <span>100% en tu navegador</span>
+        <span class="text-(--color-text-dim)" aria-hidden="true">&bull;</span>
+        <span>Sin rastreo</span>
+        <span class="text-(--color-text-dim)" aria-hidden="true">&bull;</span>
+        <span>Código abierto</span>
+      </p>
+    </div>
+
+    <div class="fade-up fade-up-5 order-1 lg:order-2">
+      <div class="tilt relative" id="hero-panel">
+        <div
+          class="relative overflow-hidden rounded-xl border border-(--color-border-strong) shadow-[0_28px_70px_-24px_rgba(10,6,30,0.85)]"
+        >
+          <AnimatedEditor />
+        </div>
+        <div
+          class="badge-drift absolute -left-3 -top-3 hidden rounded-md border border-(--color-border) bg-(--color-bg-elevated) px-2.5 py-1 font-mono text-[10.5px] text-(--color-text-secondary) shadow-xl sm:block"
+          style="--badge-rot: -4deg;"
+        >
+          <span class="text-(--color-accent-bright)">●</span> PDF
+        </div>
+        <div
+          class="badge-drift badge-drift-2 absolute -right-3 top-10 hidden rounded-md border border-(--color-border) bg-(--color-bg-elevated) px-2.5 py-1 font-mono text-[10.5px] text-(--color-text-secondary) shadow-xl sm:block"
+          style="--badge-rot: 3deg;"
+        >
+          <span class="text-(--color-signal)">●</span> DOCX
+        </div>
+        <div
+          class="badge-drift badge-drift-3 absolute -bottom-4 -left-3 hidden rounded-md border border-(--color-border) bg-(--color-bg-elevated) px-2.5 py-1 font-mono text-[10.5px] text-(--color-text-secondary) shadow-xl sm:block"
+          style="--badge-rot: -2deg;"
+        >
+          <span class="text-(--color-accent)">●</span> GFM
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Pointer-driven tilt on the hero panel. Pointer-fine devices only, and
+  // never when the visitor asked for reduced motion.
+  (() => {
+    const panel = document.getElementById('hero-panel');
+    const hero = document.getElementById('hero');
+    if (!panel || !hero) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const fine = window.matchMedia('(pointer: fine)');
+    if (reduced.matches || !fine.matches) return;
+
+    const MAX = 4.5; // degrees
+    let frame = 0;
+
+    function onMove(event: PointerEvent) {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const rect = hero!.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width - 0.5;
+        const py = (event.clientY - rect.top) / rect.height - 0.5;
+        panel!.style.setProperty('--tilt-y', `${(px * MAX * 2).toFixed(2)}deg`);
+        panel!.style.setProperty('--tilt-x', `${(-py * MAX).toFixed(2)}deg`);
+      });
+    }
+
+    function reset() {
+      panel!.style.setProperty('--tilt-x', '0deg');
+      panel!.style.setProperty('--tilt-y', '0deg');
+    }
+
+    hero.addEventListener('pointermove', onMove);
+    hero.addEventListener('pointerleave', reset);
+  })();
+</script>

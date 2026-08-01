@@ -1,0 +1,13 @@
+---
+import '@/styles/prose.css';
+import '@/styles/themes.css';
+import '@/styles/print.css';
+import Layout from '@/layouts/Layout.astro';
+import EditorApp from '@/components/editor/EditorApp';
+---
+
+<Layout title="Editor — MD Editor">
+  <main class="flex h-screen flex-col bg-(--color-bg-base)">
+    <EditorApp client:only="react" />
+  </main>
+</Layout>
