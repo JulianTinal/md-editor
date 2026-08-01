@@ -1,0 +1,16 @@
+# Netlify deploy config — MD Editor (sitio Astro estático).
+# Netlify detecta pnpm automáticamente por pnpm-lock.yaml y corre `pnpm install`
+# antes del comando de build.
+
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Los assets con hash que emite Astro son inmutables: cachearlos a full.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
