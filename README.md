@@ -10,7 +10,7 @@
 
 <p align="center">
   Editor de Markdown con vista previa en vivo y exportación a <strong>PDF</strong> y <strong>Word</strong>
-  con tipografí´´a cuidada. Todo corre en tu navegador — sin cuentas, sin backend, sin esperas.
+  con tipografía cuidada. Todo corre en tu navegador — sin cuentas, sin backend, sin esperas.
 </p>
 
 <p align="center">
@@ -31,25 +31,25 @@
 ---
 
 **MD Editor** es un editor de Markdown que convierte lo que escribes en documentos con calidad de imprenta.
-El diferencial no está en features de colaboración o nube: está en la **calidad tipográ´´fica del output**
+El diferencial no está en features de colaboración o nube: está en la **calidad tipográfica del output**
 — PDF paginado en A4 con CSS de impresión nativo, y DOCX con estilos de Word mapeados correctamente.
 
 Abres, escribes o pegas Markdown, ves el resultado renderizado en tiempo real, y cuando estás listo exportas.
 Todo el procesamiento ocurre en el cliente: **tu contenido nunca sale de tu navegador**.
 
-## ✨ Caracterí´´sticas
+## ✨ Características
 
 - **Editor con resaltado de sintaxis** — [CodeMirror 6](https://codemirror.net/) con soporte Markdown (GFM).
 - **Vista previa en vivo** — pipeline [unified](https://unifiedjs.com/) (remark → rehype) que renderiza mientras escribes.
-- **Exportació´´´n a PDF** — documento A4 paginado vía [`@react-pdf/renderer`](https://react-pdf.org/), con jerarquí´´a de tí­­tulos, tablas y código.
-- **Exportació´´´n a Word** — archivo `.docx` editable vía [`@m2d/md2docx`](https://github.com/md2docx/md2docx), 100% client-side.
+- **Exportación a PDF** — documento A4 paginado vía [`@react-pdf/renderer`](https://react-pdf.org/), con jerarquía de títulos, tablas y código.
+- **Exportación a Word** — archivo `.docx` editable vía [`@m2d/md2docx`](https://github.com/md2docx/md2docx), 100% client-side.
 - **Diagramas Mermaid** — los bloques ` ```mermaid ` se renderizan en la vista previa **y** se incrustan como imagen en el PDF.
-- **5 temas** — 3 oscuros (Violeta, Carmesí´´, Océ´´ano) y 2 claros (Papel, Escarcha), con selector en la barra.
-- **Persistencia local** — tu documento se guarda en `localStorage`: recargas y sigue ahí­­.
+- **5 temas** — 3 oscuros (Violeta, Carmesí, Océano) y 2 claros (Papel, Escarcha), con selector en la barra.
+- **Persistencia local** — tu documento se guarda en `localStorage`: recargas y sigue ahí.
 - **Panel dividido redimensionable** con scroll sincronizado entre editor y vista previa.
 - **Sin backend, sin rastreo** — todo se ejecuta en el navegador.
 
-## ⚙í´´ Có­­mo funciona
+## ⚙️ Cómo funciona
 
 ```
 Markdown  ──►  remark (parse + GFM)  ──►  rehype (+ sanitize)  ──►  Vista previa HTML
@@ -63,17 +63,17 @@ La landing es estática (Astro SSG) y el editor es una única *island* de React 
 
 ## 🧱 Stack
 
-| Capa            | Tecnologí´´a                                          |
-| --------------- | --------------------------------------------------- |
-| Framework       | [Astro](https://astro.build/) 7                     |
-| UI interactiva  | [React](https://react.dev/) 19                      |
-| Estilos         | [Tailwind CSS](https://tailwindcss.com/) v4         |
-| Editor          | [CodeMirror](https://codemirror.net/) 6             |
-| Markdown        | [unified](https://unifiedjs.com/) (remark + rehype) |
-| PDF             | [`@react-pdf/renderer`](https://react-pdf.org/)     |
-| Word            | [`@m2d/md2docx`](https://github.com/md2docx/md2docx) |
-| Diagramas       | [Mermaid](https://mermaid.js.org/)                  |
-| Lenguaje        | TypeScript (modo estricto)                          |
+| Capa | Tecnología |
+| --- | --- |
+| Framework | [Astro](https://astro.build/) 7 |
+| UI interactiva | [React](https://react.dev/) 19 |
+| Estilos | [Tailwind CSS](https://tailwindcss.com/) v4 |
+| Editor | [CodeMirror](https://codemirror.net/) 6 |
+| Markdown | [unified](https://unifiedjs.com/) (remark + rehype) |
+| PDF | [`@react-pdf/renderer`](https://react-pdf.org/) |
+| Word | [`@m2d/md2docx`](https://github.com/md2docx/md2docx) |
+| Diagramas | [Mermaid](https://mermaid.js.org/) |
+| Lenguaje | TypeScript (modo estricto) |
 
 ## 🚀 Empezar
 
@@ -93,7 +93,7 @@ pnpm dev
 
 Abre <http://localhost:4321> para la landing y <http://localhost:4321/editor> para el editor.
 
-### Compilar para producció´´´n
+### Compilar para producción
 
 ```bash
 pnpm build      # genera el sitio estático en dist/
@@ -118,11 +118,11 @@ Los imports usan el alias `@` → `src` (p. ej. `@/lib/markdown`).
 
 ## 🧑‍💻 Scripts
 
-| Comando        | Descripció´´´n                          |
-| -------------- | ------------------------------------ |
-| `pnpm dev`     | Servidor de desarrollo con HMR       |
-| `pnpm build`   | Compila el sitio estático a `dist/`  |
-| `pnpm preview` | Sirve la build de producció´´´n         |
+| Comando | Descripción |
+| --- | --- |
+| `pnpm dev` | Servidor de desarrollo con HMR |
+| `pnpm build` | Compila el sitio estático a `dist/` |
+| `pnpm preview` | Sirve la build de producción |
 
 ## 🤝 Contribuir
 
