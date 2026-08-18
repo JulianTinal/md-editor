@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  Editor de Markdown con vista previa en vivo y exportació´´´n a <strong>PDF</strong> y <strong>Word</strong>
+  Editor de Markdown con vista previa en vivo y exportación a <strong>PDF</strong> y <strong>Word</strong>
   con tipografí´´a cuidada. Todo corre en tu navegador — sin cuentas, sin backend, sin esperas.
 </p>
 
